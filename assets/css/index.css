@@ -1,0 +1,9 @@
+@import 'principal.css';
+
+#cont-princ{
+  background-color: var(--c-back-conteiner);
+  width: 560px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.233);
+}
