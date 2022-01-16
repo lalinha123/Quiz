@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Open+Sans:wght@400&family=Roboto&family=Montserrat&family=Playfair+Display&family=Roboto+Mono&family=The+Nautigal&family=Oswald&family=Dancing+Script&display=swap');
 
 :root{
   --c-cinza-claro: #e9e9e9;
@@ -10,7 +10,6 @@
   --c-azul-medio: #0193e7;
   --c-azul-escuro: #0080d6;
   --c-vermelho-ros: #f75578;
-  --c-rosa: #FF7C7C;
   --c-verde-claro: #80FF93;
 
   --c-back: var(--c-azul-claro);
@@ -18,6 +17,19 @@
   --c-back-titulo: linear-gradient(180deg, rgba(255,255,255,1) 3%, rgba(255,255,255,1) 57%, var(--c-amarelo) 57%, var(--c-amarelo) 97%);
   --c-f-titulo: black;
   --c-f-normal: var(--c-cinza-escuro);
+
+  --c-cor1: #01b9f1;
+  --c-cor2: white;
+  --c-cor3: var(--c-amarelo);
+  --c-cor4: var(--c-cinza-escuro);
+  --c-cor5: #ff6088;
+  --c-cor6: #ffa550;
+  --c-cor7: #abff5c;
+  --c-cor8: #1eecc0;
+  --c-cor9: #01b9f1;
+  --c-cor10: white;
+  --c-cor11: #f5db44;
+  --c-cor12: #353535;
 
   --f-normal: 'Open Sans', sans-serif;
   --f-titulo: 'Roboto', sans-serif;
@@ -35,6 +47,7 @@ body{
 body>*{
   margin-right: auto;
   margin-left: auto;
+  transition: 0.09s;
 }
 
 h1, h2, h3, h4, h5, h6{

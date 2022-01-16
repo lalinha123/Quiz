@@ -1,12 +1,100 @@
-window.addEventListener('load', function() {
-  document.getElementById('sec-perg').style.display = 'none';
-  document.getElementById('btn-add-p').style.display = 'none';
-  document.getElementById('btn-cria-quiz').style.display = 'none';
-})
-
-
+// --------- VARIÁVEIS----------------------------------------------------------
+let pagina_atual;
 const form = document.getElementById('form-quiz');
+const root = document.querySelector(':root')
+const root_s = getComputedStyle(root);
 let lista_perg = [];
+let lista_fonte_p = [];
+let lista_fonte_r = [];
+let aparencia_body = {
+  cor1: '',
+  cor2: '',
+  cor3: '',
+  cor4: '',
+  pontuacao: false,
+  pontos: false,
+};
+let fonte_p = {
+  fonte: 'Open Sans',
+  fonte_tipo: 'sans-serif',
+  align: 'left',
+  bold: false,
+  underline: false,
+  italic: false,
+};
+
+let fonte_r = {
+  fonte: 'Open Sans',
+  fonte_tipo: 'sans-serif',
+  align: 'left',
+  bold: false,
+  underline: false,
+  italic: false,
+};
+
+// --------- FUNÇÕES/OBJETOS DE PÁGINA----------------------------------------------------------
+
+function pagPergunta(){
+  document.getElementById('sec-quiz').style.display = 'none';
+  document.getElementById('sec-perg').style.display = 'unset';
+  document.getElementById('sec-aparencia').style.display = 'none';
+  document.getElementById('btn-pag-ant').style.display = 'unset';
+  document.getElementById('btn-prox-pag').style.display = 'block';
+  document.getElementById('btn-cria-quiz').style.display = 'none';
+  document.getElementById('subtitulo').innerHTML = `Personalize as perguntas do seu Quiz!`;
+  pagina_atual = 'pag_perguntas';
+}
+
+function pagConfigQuiz(){
+  document.getElementById('sec-quiz').style.display = 'block';
+  document.getElementById('sec-perg').style.display = 'none';
+  document.getElementById('sec-aparencia').style.display = 'none';
+  document.getElementById('btn-cria-quiz').style.display = 'none';
+  document.getElementById('btn-pag-ant').style.display = 'none';
+  document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
+  pagina_atual = `pag_config_quiz`;
+}
+
+function pagSecAparencia(){
+  document.getElementById('sec-quiz').style.display = 'none';
+  document.getElementById('sec-perg').style.display = 'none';
+  document.getElementById('sec-aparencia').style.display = 'block';
+  document.getElementById('btn-cria-quiz').style.display = 'unset';
+  document.getElementById('btn-pag-ant').style.display = 'unset';
+  document.getElementById('btn-prox-pag').style.display = 'none';
+  document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
+  pagina_atual = `pag_aparencia`;
+}
+
+function proxPag(){
+  window.scrollTo(0, 0);
+
+  if(pagina_atual === `pag_config_quiz`){
+    pagPergunta();
+  }
+
+  else if(pagina_atual === `pag_perguntas`){
+    pagSecAparencia();
+  }
+}
+
+function pagAnt(){
+  window.scrollTo(0, 0);
+  
+  if(pagina_atual === `pag_perguntas`){
+    pagConfigQuiz();
+  }
+
+  if(pagina_atual === `pag_aparencia`){
+    pagPergunta();
+  }
+}
+
+window.addEventListener('load', function() {
+  pagConfigQuiz();
+});
+
+// --------- FUNÇÕES/OBJETOS DA PÁGINA DE PERGUNTAS----------------------------------------------------------
 
 function pergunta(num, perg, respc, resp1, resp2, resp3){
   return{
@@ -126,6 +214,8 @@ function addPergunta(){
   }
 }
 
+// --------- FUNÇÕES/OBJETOS DA PÁGINA DE CONFIG----------------------------------------------------------
+
 function calcTempo(btn_id, btn_classe){
   const calc_tipo = btn_classe.substring(btn_classe.lastIndexOf("-")+1);
   const txt_tempo_tipo = btn_id.substring(btn_id.lastIndexOf("-")+1);
@@ -174,20 +264,170 @@ function calcTempo(btn_id, btn_classe){
   }
 }
 
+// --------- FUNÇÕES/OBJETOS DA PÁGINA DE APARÊNCIA----------------------------------------------------------
+
+function criaFonteLista(nome, tipo, tipo_ul){
+  const fonte = document.createElement('li');
+  let lis_fonte;
+
+  switch (tipo_ul) {
+    case 'pergunta':
+      lis_fonte = document.getElementById('lis-fonte-p');
+      lista_fonte_p.push(nome);
+      break;
+
+    case 'resposta':
+      lis_fonte = document.getElementById('lis-fonte-r');
+      lista_fonte_r.push(nome);
+      break;
+  }
+
+  fonte.innerHTML = nome;
+  fonte.style.fontFamily = nome, tipo;
+  fonte.addEventListener("click", function() {
+      mudaFonte(nome, tipo, tipo_ul);
+  }); 
+
+  lis_fonte.appendChild(fonte);
+}
+
+criaFonteLista('Open Sans', 'sans-serif', 'pergunta');
+criaFonteLista('Dancing Script', 'cursive', 'pergunta');
+criaFonteLista('Roboto', 'sans-serif', 'pergunta');
+criaFonteLista('Montserrat', 'sans-serif', 'pergunta');
+criaFonteLista('Playfair Display', 'serif', 'pergunta');
+criaFonteLista('Roboto Mono', 'monospace', 'pergunta');
+criaFonteLista('Oswald', 'sans-serif', 'pergunta');
+criaFonteLista('The Nautigal', 'cursive', 'pergunta');
+criaFonteLista('Comic Neue', 'sans-serif', 'pergunta');
+
+criaFonteLista('Open Sans', 'sans-serif', 'resposta');
+criaFonteLista('Dancing Script', 'cursive', 'resposta');
+criaFonteLista('Roboto', 'sans-serif', 'resposta');
+criaFonteLista('Montserrat', 'sans-serif', 'resposta');
+criaFonteLista('Playfair Display', 'serif', 'resposta');
+criaFonteLista('Roboto Mono', 'monospace', 'resposta');
+criaFonteLista('Oswald', 'sans-serif', 'resposta');
+criaFonteLista('The Nautigal', 'cursive', 'resposta');
+criaFonteLista('Comic Neue', 'sans-serif', 'resposta');
+
+function mudaFonte(fonte_nome, fon_tipo, fon_tipo_ul){
+  let exemplo;
+
+  switch (fon_tipo_ul) {
+    case 'pergunta':
+      exemplo = document.getElementById('lis-fon-ex-p');
+      fonte_p.fonte = fonte_nome;
+      fonte_p.fonte_tipo = fon_tipo;
+      break;
+  
+    case 'resposta':
+      exemplo = document.getElementById('lis-fon-ex-r');
+      fonte_r.fonte = fonte_nome;
+      fonte_r.fonte_tipo = fon_tipo;
+      break;
+  }
+
+  exemplo.style.fontFamily = fonte_nome, fon_tipo;
+}
+
+function textoAlign(tipo_align, tipo_ul){
+  let exemplo;
+
+  switch (tipo_ul) {
+    case 'pergunta':
+      exemplo = document.getElementById('lis-fon-ex-p');
+      fonte_p.align = tipo_align;
+      break;
+  
+    case 'resposta':
+      exemplo = document.getElementById('lis-fon-ex-r');
+      fonte_r.align = tipo_align;
+      break;
+  }
+
+  exemplo.style.textAlign = tipo_align;
+}
+
+function textoEstilo(estilo, fon_tipo_ul){
+  let exemplo;
+
+  function mudaEstilo(tipo_ul_obj, exemplo_ul){
+    exemplo = document.getElementById(exemplo_ul);
+
+    switch (estilo) {
+      case 'bold':
+        if(tipo_ul_obj.bold === true){
+          tipo_ul_obj.bold = false;
+          exemplo.style.fontWeight = 'normal';
+        }
+  
+        else if(tipo_ul_obj.bold === false){
+          tipo_ul_obj.bold = true;
+          exemplo.style.fontWeight = 'bold';
+        }
+        break;
+
+      case 'underline':
+        if(tipo_ul_obj.underline === true){
+          tipo_ul_obj.underline = false;
+          exemplo.style.textDecoration = 'none';
+        }
+  
+        else if(tipo_ul_obj.underline === false){
+          tipo_ul_obj.underline = true;
+          exemplo.style.textDecoration = 'underline';
+        }
+        break;
+
+      case 'italic':
+        if(tipo_ul_obj.italic === true){
+          tipo_ul_obj.italic = false;
+          exemplo.style.fontStyle = 'normal';
+        }
+  
+        else if(tipo_ul_obj.italic === false){
+          tipo_ul_obj.italic = true;
+          exemplo.style.fontStyle = 'italic';
+        }
+        break;
+    }
+  }
+
+  switch (fon_tipo_ul) {
+    case 'pergunta':
+      mudaEstilo(fonte_p, 'lis-fon-ex-p');
+      break;
+  
+    case 'resposta':
+      mudaEstilo(fonte_r, 'lis-fon-ex-r');
+      break;
+  }
+
+}
+
+function mudaCor(cor, cor_nova){
+
+  document.body.style.setProperty(`--c-${cor}`, root_s.getPropertyValue(`--c-${cor_nova}`));
+}
+
+function abreCor(div_nome){
+  document.getElementById('div-cor-btn-1').style.display = 'none';
+  document.getElementById('div-cor-btn-2').style.display = 'none';
+  document.getElementById('div-cor-btn-3').style.display = 'none';
+  document.getElementById('div-cor-btn-4').style.display = 'none';
+  document.getElementById(div_nome).style.display = 'grid';
+}
+
+function fechaCor(div_nome){
+  document.getElementById(div_nome).style.display = 'none';
+}
+
+
+// --------- SUBMIT----------------------------------------------------------
+
 form.addEventListener("submit", function() {
-  const txt_nome = localStorage.setItem('txt_nome', document.querySelector('#txt-nome'));
-  const txt_tema = localStorage.setItem('txt_tema', document.querySelector('#txt-tema'));
-  const txt_tempo_min = localStorage.setItem('txt_tempo_min', document.querySelector('#txt-tempo-min'));
-  const txt_tempo_seg = localStorage.setItem('txt_tempo_seg', document.querySelector('#txt-tempo-seg'));
-  const nome = localStorage.setItem('nome', document.querySelector('#txt-nome').value);
-  const tema = localStorage.setItem('tema', document.querySelector('#txt-tema').value);
-  const tempo_min = localStorage.setItem('tempo_min', document.querySelector('#txt-tempo-min').value);
-  const tempo_seg = localStorage.setItem('tempo_seg', document.querySelector('#txt-tempo-seg').value);
 
-}); 
-
-window.addEventListener("onload", function(e) {
-  console.log('funfou');
 }); 
 
 
