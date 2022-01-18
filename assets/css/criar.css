@@ -3,9 +3,15 @@
 #cont-quiz{
   background-color: var(--c-back-conteiner);
   width: inherit;
+  height: fit-content;
+  margin: auto;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: relative;
 }
 
 #cont-quiz::after, #cont-quiz::before {
