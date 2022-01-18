@@ -3,14 +3,11 @@ let pagina_atual;
 const form = document.getElementById('form-quiz');
 const root = document.querySelector(':root')
 const root_s = getComputedStyle(root);
+const p_perg_apar = document.getElementById('pre-vis-pergunta');
 let lista_perg = [];
 let lista_fonte_p = [];
 let lista_fonte_r = [];
-let aparencia_body = {
-  cor1: '',
-  cor2: '',
-  cor3: '',
-  cor4: '',
+let pont_body = {
   pontuacao: false,
   pontos: false,
 };
@@ -32,67 +29,10 @@ let fonte_r = {
   italic: false,
 };
 
-// --------- FUNÇÕES/OBJETOS DE PÁGINA----------------------------------------------------------
-
-function pagPergunta(){
-  document.getElementById('sec-quiz').style.display = 'none';
-  document.getElementById('sec-perg').style.display = 'unset';
-  document.getElementById('sec-aparencia').style.display = 'none';
-  document.getElementById('btn-pag-ant').style.display = 'unset';
-  document.getElementById('btn-prox-pag').style.display = 'block';
-  document.getElementById('btn-cria-quiz').style.display = 'none';
-  document.getElementById('subtitulo').innerHTML = `Personalize as perguntas do seu Quiz!`;
-  pagina_atual = 'pag_perguntas';
-}
-
-function pagConfigQuiz(){
-  document.getElementById('sec-quiz').style.display = 'block';
-  document.getElementById('sec-perg').style.display = 'none';
-  document.getElementById('sec-aparencia').style.display = 'none';
-  document.getElementById('btn-cria-quiz').style.display = 'none';
-  document.getElementById('btn-pag-ant').style.display = 'none';
-  document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
-  pagina_atual = `pag_config_quiz`;
-}
-
-function pagSecAparencia(){
-  document.getElementById('sec-quiz').style.display = 'none';
-  document.getElementById('sec-perg').style.display = 'none';
-  document.getElementById('sec-aparencia').style.display = 'block';
-  document.getElementById('btn-cria-quiz').style.display = 'unset';
-  document.getElementById('btn-pag-ant').style.display = 'unset';
-  document.getElementById('btn-prox-pag').style.display = 'none';
-  document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
-  pagina_atual = `pag_aparencia`;
-}
-
-function proxPag(){
-  window.scrollTo(0, 0);
-
-  if(pagina_atual === `pag_config_quiz`){
-    pagPergunta();
-  }
-
-  else if(pagina_atual === `pag_perguntas`){
-    pagSecAparencia();
-  }
-}
-
-function pagAnt(){
-  window.scrollTo(0, 0);
-  
-  if(pagina_atual === `pag_perguntas`){
-    pagConfigQuiz();
-  }
-
-  if(pagina_atual === `pag_aparencia`){
-    pagPergunta();
-  }
-}
-
-window.addEventListener('load', function() {
-  pagConfigQuiz();
-});
+let nome;
+let tema;
+let tempo_min;
+let tempo_seg;
 
 // --------- FUNÇÕES/OBJETOS DA PÁGINA DE PERGUNTAS----------------------------------------------------------
 
@@ -300,6 +240,7 @@ criaFonteLista('Roboto Mono', 'monospace', 'pergunta');
 criaFonteLista('Oswald', 'sans-serif', 'pergunta');
 criaFonteLista('The Nautigal', 'cursive', 'pergunta');
 criaFonteLista('Comic Neue', 'sans-serif', 'pergunta');
+criaFonteLista('Heebo', 'sans-serif', 'pergunta');
 
 criaFonteLista('Open Sans', 'sans-serif', 'resposta');
 criaFonteLista('Dancing Script', 'cursive', 'resposta');
@@ -310,6 +251,7 @@ criaFonteLista('Roboto Mono', 'monospace', 'resposta');
 criaFonteLista('Oswald', 'sans-serif', 'resposta');
 criaFonteLista('The Nautigal', 'cursive', 'resposta');
 criaFonteLista('Comic Neue', 'sans-serif', 'resposta');
+criaFonteLista('Heebo', 'sans-serif', 'resposta');
 
 function mudaFonte(fonte_nome, fon_tipo, fon_tipo_ul){
   let exemplo;
@@ -329,6 +271,8 @@ function mudaFonte(fonte_nome, fon_tipo, fon_tipo_ul){
   }
 
   exemplo.style.fontFamily = fonte_nome, fon_tipo;
+  document.body.style.setProperty(`--f-pergunta`, `${fonte_p.fonte}, ${fonte_p.fonte_tipo}`);
+  document.body.style.setProperty(`--f-resposta`, `${fonte_r.fonte}, ${fonte_r.fonte_tipo}`);
 }
 
 function textoAlign(tipo_align, tipo_ul){
@@ -338,11 +282,13 @@ function textoAlign(tipo_align, tipo_ul){
     case 'pergunta':
       exemplo = document.getElementById('lis-fon-ex-p');
       fonte_p.align = tipo_align;
+      p_perg_apar.style.textAlign = tipo_align;
       break;
   
     case 'resposta':
       exemplo = document.getElementById('lis-fon-ex-r');
       fonte_r.align = tipo_align;
+      //p_resp_apar.style.textAlign = tipo_align;
       break;
   }
 
@@ -352,7 +298,7 @@ function textoAlign(tipo_align, tipo_ul){
 function textoEstilo(estilo, fon_tipo_ul){
   let exemplo;
 
-  function mudaEstilo(tipo_ul_obj, exemplo_ul){
+  function mudaEstilo(tipo_ul_obj, exemplo_ul, p_apar){
     exemplo = document.getElementById(exemplo_ul);
 
     switch (estilo) {
@@ -360,11 +306,13 @@ function textoEstilo(estilo, fon_tipo_ul){
         if(tipo_ul_obj.bold === true){
           tipo_ul_obj.bold = false;
           exemplo.style.fontWeight = 'normal';
+          p_apar.style.fontWeight = 'normal';
         }
   
         else if(tipo_ul_obj.bold === false){
           tipo_ul_obj.bold = true;
           exemplo.style.fontWeight = 'bold';
+          p_apar.style.fontWeight = 'bold'
         }
         break;
 
@@ -372,11 +320,13 @@ function textoEstilo(estilo, fon_tipo_ul){
         if(tipo_ul_obj.underline === true){
           tipo_ul_obj.underline = false;
           exemplo.style.textDecoration = 'none';
+          p_apar.style.textDecoration = 'none';
         }
   
         else if(tipo_ul_obj.underline === false){
           tipo_ul_obj.underline = true;
           exemplo.style.textDecoration = 'underline';
+          p_apar.style.textDecoration = 'underline';
         }
         break;
 
@@ -384,11 +334,13 @@ function textoEstilo(estilo, fon_tipo_ul){
         if(tipo_ul_obj.italic === true){
           tipo_ul_obj.italic = false;
           exemplo.style.fontStyle = 'normal';
+          p_apar.style.fontStyle = 'normal';
         }
   
         else if(tipo_ul_obj.italic === false){
           tipo_ul_obj.italic = true;
           exemplo.style.fontStyle = 'italic';
+          p_apar.style.fontStyle = 'italic';
         }
         break;
     }
@@ -396,39 +348,137 @@ function textoEstilo(estilo, fon_tipo_ul){
 
   switch (fon_tipo_ul) {
     case 'pergunta':
-      mudaEstilo(fonte_p, 'lis-fon-ex-p');
+      mudaEstilo(fonte_p, 'lis-fon-ex-p', p_perg_apar);
       break;
   
     case 'resposta':
-      mudaEstilo(fonte_r, 'lis-fon-ex-r');
+      mudaEstilo(fonte_r, 'lis-fon-ex-r', p_resp_apar);
       break;
   }
 
 }
 
 function mudaCor(cor, cor_nova){
-
   document.body.style.setProperty(`--c-${cor}`, root_s.getPropertyValue(`--c-${cor_nova}`));
 }
 
 function abreCor(div_nome){
-  document.getElementById('div-cor-btn-1').style.display = 'none';
-  document.getElementById('div-cor-btn-2').style.display = 'none';
-  document.getElementById('div-cor-btn-3').style.display = 'none';
-  document.getElementById('div-cor-btn-4').style.display = 'none';
-  document.getElementById(div_nome).style.display = 'grid';
+  function addDisplayNone(id){
+    document.getElementById(id).style.display = 'none'
+  }
+
+  if(document.getElementById(div_nome).style.display != 'grid'){
+    addDisplayNone('div-cor-btn-1');
+    addDisplayNone('div-cor-btn-2');
+    addDisplayNone('div-cor-btn-3');
+    addDisplayNone('div-cor-btn-4');
+    document.getElementById(div_nome).style.display = 'grid';
+  }
+
+  else if(document.getElementById(div_nome).style.display === 'grid'){
+    addDisplayNone(div_nome);
+  }
+  
+  
 }
 
-function fechaCor(div_nome){
-  document.getElementById(div_nome).style.display = 'none';
+// --------- FUNÇÕES/OBJETOS DE PÁGINA----------------------------------------------------------
+
+function pegaInformacao(){
+  nome = document.getElementById('txt-nome').value;
+  tema = document.getElementById('txt-tema').value;
+  tempo_min = document.getElementById('txt-tempo-min').value;
+  tempo_seg = document.getElementById('txt-tempo-seg').value;
+
+  document.getElementById('p-pre-vis-temp').innerHTML = `${tempo_min} : ${tempo_seg}`
+  document.getElementById('pre-vis-tema').innerHTML = tema;
+
+  if(document.getElementById('txt-p-p1').value === ''){
+    p_perg_apar.innerHTML = 'Gostou desse estilo? Tente outros também!'
+  }
+
+  else if(document.getElementById('txt-p-p1').value != ''){
+    p_perg_apar.innerHTML = document.getElementById('txt-p-p1').value;
+  }
+
 }
+
+function pagPergunta(){
+  document.getElementById('sec-quiz').style.display = 'none';
+  document.getElementById('sec-perg').style.display = 'unset';
+  document.getElementById('sec-aparencia').style.display = 'none';
+  document.getElementById('btn-pag-ant').style.display = 'unset';
+  document.getElementById('btn-prox-pag').style.display = 'block';
+  document.getElementById('btn-cria-quiz').style.display = 'none';
+  document.getElementById('btn-add-p').style.display = 'unset';
+  document.getElementById('subtitulo').innerHTML = `Personalize as perguntas do seu jeito!`;
+  pagina_atual = 'pag_perguntas';
+}
+
+function pagConfigQuiz(){
+  document.getElementById('sec-quiz').style.display = 'block';
+  document.getElementById('sec-perg').style.display = 'none';
+  document.getElementById('sec-aparencia').style.display = 'none';
+  document.getElementById('btn-cria-quiz').style.display = 'none';
+  document.getElementById('btn-pag-ant').style.display = 'none';
+  document.getElementById('btn-add-p').style.display = 'none';
+  document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
+  pagina_atual = `pag_config_quiz`;
+}
+
+function pagSecAparencia(){
+  document.getElementById('sec-quiz').style.display = 'none';
+  document.getElementById('sec-perg').style.display = 'none';
+  document.getElementById('sec-aparencia').style.display = 'block';
+  document.getElementById('btn-cria-quiz').style.display = 'unset';
+  document.getElementById('btn-pag-ant').style.display = 'unset';
+  document.getElementById('btn-prox-pag').style.display = 'none';
+  document.getElementById('btn-add-p').style.display = 'none';
+  document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
+  pagina_atual = `pag_aparencia`;
+}
+
+function proxPag(){
+  window.scrollTo(0, 0);
+  pegaInformacao();
+
+  if(pagina_atual === `pag_config_quiz`){
+    pagPergunta();
+  }
+
+  else if(pagina_atual === `pag_perguntas`){
+    pagSecAparencia();
+  }
+}
+
+function pagAnt(){
+  window.scrollTo(0, 0);
+  
+  if(pagina_atual === `pag_perguntas`){
+    pagConfigQuiz();
+  }
+
+  if(pagina_atual === `pag_aparencia`){
+    pagPergunta();
+  }
+}
+
+window.addEventListener('load', function() {
+  pagConfigQuiz();
+});
 
 
 // --------- SUBMIT----------------------------------------------------------
 
-form.addEventListener("submit", function() {
+document.getElementById('btn-cria-quiz').addEventListener('click', function(){
+  if(document.getElementsByClassName('input-obrigatorio').value == ''){
+    alert('aaa');
+  }
+});
 
-}); 
+
+
+
 
 
 

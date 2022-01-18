@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Open+Sans:wght@400&family=Roboto&family=Montserrat&family=Playfair+Display&family=Roboto+Mono&family=The+Nautigal&family=Oswald&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Heebo&family=Open+Sans:wght@400&family=Roboto&family=Montserrat&family=Playfair+Display&family=Roboto+Mono&family=The+Nautigal&family=Oswald&family=Dancing+Script&display=swap');
 
 :root{
   --c-cinza-claro: #e9e9e9;
   --c-cinza-claro-creme: #f4f1de;
   --c-cinza-medio: #9e9e9e;
   --c-cinza-escuro: #353535;
-  --c-amarelo: #f5db44;
+  --c-amarelo: #faec53;
   --c-azul-claro: #01b9f1;
   --c-azul-medio: #0193e7;
   --c-azul-escuro: #0080d6;
   --c-vermelho-ros: #f75578;
   --c-verde-claro: #80FF93;
 
-  --c-back: var(--c-azul-claro);
+  --c-back: linear-gradient(145deg, #01b9f1 0%, #5ddfff 100%);
   --c-back-conteiner: white;
-  --c-back-titulo: linear-gradient(180deg, rgba(255,255,255,1) 3%, rgba(255,255,255,1) 57%, var(--c-amarelo) 57%, var(--c-amarelo) 97%);
+  --c-back-titulo: var(--c-amarelo);
   --c-f-titulo: black;
   --c-f-normal: var(--c-cinza-escuro);
 
@@ -28,15 +28,19 @@
   --c-cor8: #1eecc0;
   --c-cor9: #01b9f1;
   --c-cor10: white;
-  --c-cor11: #f5db44;
+  --c-cor11: #f5e744;
   --c-cor12: #353535;
 
   --f-normal: 'Open Sans', sans-serif;
-  --f-titulo: 'Roboto', sans-serif;
+  --f-titulo: 'Heebo', sans-serif;
+
+  --f-pergunta: 'Open Sans', sans-serif;
+  --f-resposta: 'Open Sans', sans-serif;
 }
 
 body{
-  background-color: var(--c-back);
+  background: var(--c-back);
+  background-attachment: fixed;
   color: var(--c-f-normal);
   font-family: var(--f-normal);
   font-size: 17px;
@@ -69,7 +73,7 @@ button{
   margin: 10px;
   padding: 10px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   outline: none;
   transition: 0.08s;
 }
