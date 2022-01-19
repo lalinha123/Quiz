@@ -6,4 +6,8 @@
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.233);
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
 }

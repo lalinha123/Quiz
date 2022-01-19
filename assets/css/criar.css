@@ -1,5 +1,9 @@
 @import 'principal.css';
 
+#nav-link-criar{
+  border-bottom: 2px solid white;
+}
+
 #cont-quiz{
   background-color: var(--c-back-conteiner);
   width: inherit;
@@ -29,7 +33,7 @@
 
 #titulo-princ h1{
   background-color: var(--c-back-titulo);
-  font-size: 40px;
+  font-size: 37px;
   text-align: center;
   width: fit-content;
   margin: 2vh auto;

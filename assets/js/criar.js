@@ -411,6 +411,7 @@ function pagPergunta(){
   document.getElementById('btn-prox-pag').style.display = 'block';
   document.getElementById('btn-cria-quiz').style.display = 'none';
   document.getElementById('btn-add-p').style.display = 'unset';
+  document.getElementById('titulo').innerHTML = `Perguntas`;
   document.getElementById('subtitulo').innerHTML = `Personalize as perguntas do seu jeito!`;
   pagina_atual = 'pag_perguntas';
 }
@@ -422,6 +423,7 @@ function pagConfigQuiz(){
   document.getElementById('btn-cria-quiz').style.display = 'none';
   document.getElementById('btn-pag-ant').style.display = 'none';
   document.getElementById('btn-add-p').style.display = 'none';
+  document.getElementById('titulo').innerHTML = `Crie seu Quiz!`;
   document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
   pagina_atual = `pag_config_quiz`;
 }
@@ -434,6 +436,7 @@ function pagSecAparencia(){
   document.getElementById('btn-pag-ant').style.display = 'unset';
   document.getElementById('btn-prox-pag').style.display = 'none';
   document.getElementById('btn-add-p').style.display = 'none';
+  document.getElementById('titulo').innerHTML = `Aparência`;
   document.getElementById('subtitulo').innerHTML = `Personalize seu Quiz como quiser com as informações abaixo!`;
   pagina_atual = `pag_aparencia`;
 }
@@ -475,6 +478,8 @@ document.getElementById('btn-cria-quiz').addEventListener('click', function(){
     alert('aaa');
   }
 });
+
+navbar();
 
 
 
