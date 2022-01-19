@@ -238,6 +238,33 @@ div#pre-vis-temp p{
   padding: 0;
 }
 
+div#pre-vis-pont{
+  width: fit-content;
+  margin: 70px 20px 20px;
+  padding: 5px 20px;
+  border: 1px solid var(--c-cor4);
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.123);
+}
+
+div#pre-vis-pont p{
+  border-bottom: 2px solid var(--c-cor3);
+  font-family: var(--f-pergunta);
+  padding: 0 3px;
+ }
+
+div#pre-vis-pont ul{
+ padding: 0;
+}
+
+div#pre-vis-pont ul li{
+  font-family: var(--f-resposta);
+  font-size: 14px;
+  list-style: none;
+ }
+
 div#pre-vis-quiz{
   width: 250px;
   height: 310px;
