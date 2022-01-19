@@ -4,6 +4,7 @@ const form = document.getElementById('form-quiz');
 const root = document.querySelector(':root')
 const root_s = getComputedStyle(root);
 const p_perg_apar = document.getElementById('pre-vis-pergunta');
+const p_resp_apar = document.querySelector('.pre-vis-resposta');
 let lista_perg = [];
 let lista_fonte_p = [];
 let lista_fonte_r = [];
@@ -312,7 +313,7 @@ function textoEstilo(estilo, fon_tipo_ul){
         else if(tipo_ul_obj.bold === false){
           tipo_ul_obj.bold = true;
           exemplo.style.fontWeight = 'bold';
-          p_apar.style.fontWeight = 'bold'
+          p_apar.style.fontWeight = 'bold';
         }
         break;
 

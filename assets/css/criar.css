@@ -250,7 +250,7 @@ div#pre-vis-pont{
 }
 
 div#pre-vis-pont p{
-  border-bottom: 2px solid var(--c-cor3);
+  background-color: var(--c-cor3);
   font-family: var(--f-pergunta);
   padding: 0 3px;
  }
@@ -327,7 +327,7 @@ div.div-cor-btn{
   background-color: var(--c-back-conteiner);
   margin: -10px 10px 0;
   padding: 10px;
-  border: 1px solid var(--c-cinza-escuro);
+  border: 1px solid var(--c-cinza-medio);
   border-radius: 5px;
   position: absolute;
   display: none;
