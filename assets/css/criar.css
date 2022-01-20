@@ -211,6 +211,7 @@ div.div-btn-tempo button{
 
 div#pre-vis-aparencia{
   height: 430px;
+  max-height: 430px;
   padding: 10px 40px;
   border: 1px solid var(--c-cinza-escuro);
   border-radius: 8px;
@@ -257,7 +258,6 @@ div#pre-vis-pont{
 div#pre-vis-pont p{
   background-color: var(--c-cor3);
   font-size: 14px;
-  font-weight: bold;
   font-family: var(--f-pergunta);
   padding: 0 3px;
  }
@@ -305,7 +305,7 @@ div#pre_vis_div_top{
 
 div#pre_vis_div_top p{
   font-family: var(--f-resposta);
-  font-size: 12px;
+  font-size: 10px;
 }
 
 p#pre_vis_pontos{
@@ -329,10 +329,11 @@ p#pre-vis-pergunta{
 }
 
 #pre_vis_lis_r li{
+  font-family: var(--f-resposta);
   font-size: 13px;
   list-style: circle;
   margin: 2.5px 0;
-  padding: 7px;
+  padding: 7px 10px;
 }
 
 div#div-div-muda-aparencia{
@@ -389,27 +390,17 @@ button.btn-cor-btn:hover{
   outline-width: 2px;
 }
 
-div#div-div-fonte{
+div#div-div-apar{
   padding: 0 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-p.lis-fon-exemplo{
-  font-size: 28px;
-  text-align: left;
-  width: 70%;
-  height: 5vh;
-  margin: 2.5vh auto 4vh;
-  padding: 5px 20px;
-  border: 1px solid var(--c-cinza-medio);
-  border-radius: 5px;
-}
-
-p.lis-fon-titulo{
+p.lis-apar-titulo{
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+  margin-top: 20px;
 }
 
 ul#lis-fonte-p, ul#lis-fonte-r{
@@ -460,9 +451,6 @@ ul#lis-fonte-p:hover, ul#lis-fonte-r:hover, div.div-lis-fon-estilo:hover{
 
 div.div-lis-fon-estilo i:hover, div.div-lis-fon-estilo i:active{
   background-color: var(--c-cinza-claro);
-}
-
-div.div-lis-fon-estilo i:hover, div.div-lis-fon-estilo i:active{
   cursor: pointer;
 }
 

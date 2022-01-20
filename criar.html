@@ -189,10 +189,10 @@
                   </div>
 
                   <ul id="pre_vis_lis_r">
-                    <li>Resposta 1</li>
-                    <li>Resposta 2</li>
-                    <li>Resposta 3</li>
-                    <li>Resposta 4</li>
+                    <li id="pre-vis-lis-r-1">Resposta 1</li>
+                    <li id="pre-vis-lis-r-2">Resposta 2</li>
+                    <li id="pre-vis-lis-r-3">Resposta 3</li>
+                    <li id="pre-vis-lis-r-4">Resposta 4</li>
                   </ul>
                 </div>
 
@@ -276,48 +276,39 @@
 
           <div class="div-input">
             <label for="">Estilo da fonte - Pergunta</label>
-            <p class="lis-fon-exemplo" id="lis-fon-ex-p">Pergunta</p>
-            <div id="div-div-fonte">
-              <section class="sec-lis-fon">
-                <p class="lis-fon-titulo">Fonte</p>
+            <div id="div-div-apar">
+              <section class="sec-apar">
+                <p class="lis-apar-titulo">Fonte</p>
                 <ul id="lis-fonte-p">
                 </ul>
               </section>
-              <section class="sec-lis-fon">
-                <p class="lis-fon-titulo">Alinhamento</p>
-                <div class="div-lis-fon-estilo">
-                  <i class="fas fa-align-left" onclick="textoAlign('left', 'pergunta')"></i>
-                  <i class="fas fa-align-center" onclick="textoAlign('center', 'pergunta')"></i>
-                  <i class="fas fa-align-right" onclick="textoAlign('right', 'pergunta')"></i>
-                </div>
-
-                <p class="lis-fon-titulo">Estilo</p>
+              <section class="sec-apar">
+                <p class="lis-apar-titulo">Estilo</p>
                 <div class="div-lis-fon-estilo">
                   <i class="fas fa-bold" onclick="textoEstilo('bold', 'pergunta')"></i>
                   <i class="fas fa-underline" onclick="textoEstilo('underline', 'pergunta')"></i>
                   <i class="fas fa-italic" onclick="textoEstilo('italic', 'pergunta')"></i>
+                </div>
+
+                <p class="lis-apar-titulo">Alinhamento</p>
+                <div class="div-lis-fon-estilo">
+                  <i class="fas fa-align-left" onclick="textoAlign('left')"></i>
+                  <i class="fas fa-align-center" onclick="textoAlign('center')"></i>
+                  <i class="fas fa-align-right" onclick="textoAlign('right')"></i>
                 </div>
               </section>
             </div>
           </div>
           <div class="div-input">
             <label for="">Estilo da fonte - Respostas</label>
-            <p class="lis-fon-exemplo" id="lis-fon-ex-r">Resposta</p>
-            <div id="div-div-fonte">
-              <section class="sec-lis-fon">
-                <p class="lis-fon-titulo">Fonte</p>
+            <div id="div-div-apar">
+              <section class="sec-apar">
+                <p class="lis-apar-titulo">Fonte</p>
                 <ul id="lis-fonte-r">
                 </ul>
               </section>
-              <section class="sec-lis-fon">
-              <p class="lis-fon-titulo">Alinhamento</p>
-                <div class="div-lis-fon-estilo">
-                  <i class="fas fa-align-left" onclick="textoAlign('left', 'resposta')"></i>
-                  <i class="fas fa-align-center" onclick="textoAlign('center', 'resposta')"></i>
-                  <i class="fas fa-align-right" onclick="textoAlign('right', 'resposta')"></i>
-                </div>
-
-                <p class="lis-fon-titulo">Estilo</p>
+              <section class="sec-apar">
+                <p class="lis-apar-titulo">Estilo</p>
                 <div class="div-lis-fon-estilo">
                   <i class="fas fa-bold" onclick="textoEstilo('bold', 'resposta')"></i>
                   <i class="fas fa-underline" onclick="textoEstilo('underline', 'resposta')"></i>

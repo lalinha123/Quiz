@@ -4,7 +4,7 @@ const form = document.getElementById('form-quiz');
 const root = document.querySelector(':root')
 const root_s = getComputedStyle(root);
 const p_perg_apar = document.getElementById('pre-vis-pergunta');
-const p_resp_apar = document.getElementById('pre_vis_lis_r');
+const p_resp_apar = document.querySelector("ul#pre_vis_lis_r");
 let lista_perg = [];
 let lista_fonte_p = [];
 let lista_fonte_r = [];
@@ -261,60 +261,37 @@ function mudaFonte(fonte_nome, fon_tipo, fon_tipo_ul){
 
   switch (fon_tipo_ul) {
     case 'pergunta':
-      exemplo = document.getElementById('lis-fon-ex-p');
       fonte_p.fonte = fonte_nome;
       fonte_p.fonte_tipo = fon_tipo;
       break;
   
     case 'resposta':
-      exemplo = document.getElementById('lis-fon-ex-r');
       fonte_r.fonte = fonte_nome;
       fonte_r.fonte_tipo = fon_tipo;
       break;
   }
 
-  exemplo.style.fontFamily = fonte_nome, fon_tipo;
   document.body.style.setProperty(`--f-pergunta`, `${fonte_p.fonte}, ${fonte_p.fonte_tipo}`);
   document.body.style.setProperty(`--f-resposta`, `${fonte_r.fonte}, ${fonte_r.fonte_tipo}`);
 }
 
-function textoAlign(tipo_align, tipo_ul){
-  let exemplo;
-
-  switch (tipo_ul) {
-    case 'pergunta':
-      exemplo = document.getElementById('lis-fon-ex-p');
-      fonte_p.align = tipo_align;
-      p_perg_apar.style.textAlign = tipo_align;
-      break;
-  
-    case 'resposta':
-      exemplo = document.getElementById('lis-fon-ex-r');
-      fonte_r.align = tipo_align;
-      //p_resp_apar.style.textAlign = tipo_align;
-      break;
-  }
-
-  exemplo.style.textAlign = tipo_align;
+function textoAlign(tipo_align){
+  fonte_p.align = tipo_align;
+  p_perg_apar.style.textAlign = tipo_align;
 }
 
 function textoEstilo(estilo, fon_tipo_ul){
-  let exemplo;
-
-  function mudaEstilo(tipo_ul_obj, exemplo_ul, p_apar){
-    exemplo = document.getElementById(exemplo_ul);
+  function mudaEstilo(tipo_ul_obj, p_apar){
 
     switch (estilo) {
       case 'bold':
         if(tipo_ul_obj.bold === true){
           tipo_ul_obj.bold = false;
-          exemplo.style.fontWeight = 'normal';
           p_apar.style.fontWeight = 'normal';
         }
   
         else if(tipo_ul_obj.bold === false){
           tipo_ul_obj.bold = true;
-          exemplo.style.fontWeight = 'bold';
           p_apar.style.fontWeight = 'bold';
         }
         break;
@@ -322,13 +299,11 @@ function textoEstilo(estilo, fon_tipo_ul){
       case 'underline':
         if(tipo_ul_obj.underline === true){
           tipo_ul_obj.underline = false;
-          exemplo.style.textDecoration = 'none';
           p_apar.style.textDecoration = 'none';
         }
   
         else if(tipo_ul_obj.underline === false){
           tipo_ul_obj.underline = true;
-          exemplo.style.textDecoration = 'underline';
           p_apar.style.textDecoration = 'underline';
         }
         break;
@@ -336,13 +311,11 @@ function textoEstilo(estilo, fon_tipo_ul){
       case 'italic':
         if(tipo_ul_obj.italic === true){
           tipo_ul_obj.italic = false;
-          exemplo.style.fontStyle = 'normal';
           p_apar.style.fontStyle = 'normal';
         }
   
         else if(tipo_ul_obj.italic === false){
           tipo_ul_obj.italic = true;
-          exemplo.style.fontStyle = 'italic';
           p_apar.style.fontStyle = 'italic';
         }
         break;
@@ -351,11 +324,11 @@ function textoEstilo(estilo, fon_tipo_ul){
 
   switch (fon_tipo_ul) {
     case 'pergunta':
-      mudaEstilo(fonte_p, 'lis-fon-ex-p', p_perg_apar);
+      mudaEstilo(fonte_p, p_perg_apar);
       break;
   
     case 'resposta':
-      mudaEstilo(fonte_r, 'lis-fon-ex-r', p_resp_apar);
+      mudaEstilo(fonte_r, p_resp_apar);
       break;
   }
 
