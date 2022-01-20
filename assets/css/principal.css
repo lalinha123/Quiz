@@ -97,8 +97,8 @@ button i{
   left: 50%;
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  position: absolute;
-  z-index: 2000;
+  position: fixed;
+  z-index: -2000;
 }
 
 #navbar ul{

@@ -68,7 +68,7 @@
   color: var(--c-f-normal);
   font-family: var(--f-normal);
   font-size: 18px;
-  width: 90%;
+  width: 85%;
   margin: 12px auto 0;
   padding: 7px 10px;
   display: block;
@@ -88,6 +88,11 @@
   padding: 5px 20px;
 }
 
+input[type='text']{
+  padding: 7px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--c-cinza-medio);
+}
 
 input[type='radio'], input[type='checkbox']{
   left: 30px;
@@ -205,7 +210,7 @@ div.div-btn-tempo button{
 }
 
 div#pre-vis-aparencia{
-  height: 47vh;
+  height: 430px;
   padding: 10px 40px;
   border: 1px solid var(--c-cinza-escuro);
   border-radius: 8px;
@@ -238,6 +243,7 @@ div#pre-vis-temp p{
 }
 
 div#pre-vis-pont{
+  text-align: center;
   width: 95px;
   margin: 70px 20px 20px;
   padding: 5px 20px;
@@ -250,17 +256,21 @@ div#pre-vis-pont{
 
 div#pre-vis-pont p{
   background-color: var(--c-cor3);
+  font-size: 14px;
+  font-weight: bold;
   font-family: var(--f-pergunta);
   padding: 0 3px;
  }
 
 div#pre-vis-pont ul{
  padding: 0;
+ text-align: left;
 }
 
 div#pre-vis-pont ul li{
   font-family: var(--f-resposta);
-  font-size: 14px;
+  font-size: 12px;
+  margin: 3.5px 0;
   list-style: none;
  }
 
@@ -461,7 +471,7 @@ button.btn-add-r, button#btn-add-p{
   font-size: 20px;
   width: 60%;
   margin: 1vh auto 0;
-  border: 1px solid var(--c-cinza-escuro);
+  border: 1px solid var(--c-cinza-medio);
   border-radius: 30px;
   position: relative;
   left: 50%;
@@ -471,6 +481,7 @@ button.btn-add-r, button#btn-add-p{
 
 button.btn-add-r:hover, button#btn-add-p:hover{
   filter: brightness(94%);
+  border-color: var(--c-cinza-escuro);
 }
 
 div#div-btn-pag button{
