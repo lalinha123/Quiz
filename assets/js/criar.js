@@ -7,12 +7,16 @@ const p_perg_apar = document.getElementById('pre-vis-pergunta');
 const p_resp_apar = document.querySelector("ul#pre_vis_lis_r");
 let cbx_placar;
 let cbx_pontos;
+let tipo_ordem_r;
 let lista_perg = [];
 let lista_fonte_p = [];
 let lista_fonte_r = [];
-let pont_body = {
-  pontuacao: false,
-  pontos: false,
+let quiz_config = {
+  div_pontuacao: false,
+  p_pontos: false,
+  ordem_r: '',
+  seq_p: '',
+  seq_r: '',
 };
 let fonte_p = {
   fonte: 'Open Sans',
@@ -382,26 +386,75 @@ function pegaInformacao(){
  switch (cbx_pontuacao) {
    case true:
      document.getElementById('pre-vis-pont').style.display = 'unset';
-     pont_body.pontuacao = true;
+     quiz_config.div_pontuacao = true;
      break;
  
     case false:
       document.getElementById('pre-vis-pont').style.display = 'none';
-      pont_body.pontuacao = false;
+      quiz_config.div_pontuacao = false;
       break;
  }
 
  switch (cbx_pontos) {
   case true:
     document.getElementById('pre_vis_pontos').style.display = 'unset';
-    pont_body.pontos = true;
+    quiz_config.p_pontos = true;
     break;
 
    case false:
      document.getElementById('pre_vis_pontos').style.display = 'none';
-     pont_body.pontos = false;
+     quiz_config.p_pontos = false;
      break;
 }
+
+ if(document.getElementById('rd-ord-resp-abc-mai').checked){
+  tipo_ordem_r = 'upper-alpha';
+ }
+
+ else if(document.getElementById('rd-ord-resp-abc-min').checked){
+  tipo_ordem_r = 'lower-alpha';
+ }
+
+ else if(document.getElementById('rd-ord-resp-123').checked){
+  tipo_ordem_r = 'decimal';
+ }
+
+ else if(document.getElementById('rd-ord-resp-123-rom').checked){
+  tipo_ordem_r = 'upper-roman';
+ }
+
+ else if(document.getElementById('rd-ord-resp-nada').checked){
+  tipo_ordem_r = 'none';
+ }
+
+  document.getElementById('pre-vis-lis-r-1').style.listStyle = tipo_ordem_r;
+  document.getElementById('pre-vis-lis-r-2').style.listStyle = tipo_ordem_r;
+
+  if(document.getElementById('pre-vis-lis-r-3')){
+    document.getElementById('pre-vis-lis-r-3').style.listStyle = tipo_ordem_r;
+
+    if(document.getElementById('txt-re2-p1').value != ''){
+      document.getElementById('pre-vis-lis-r-3').innerHTML = document.getElementById('txt-re2-p1').value;
+    }
+
+    else{
+      document.getElementById('pre-vis-lis-r-3').innerHTML = 'Resposta 3';
+    }
+  }
+
+  if(document.getElementById('pre-vis-lis-r-4')){
+    document.getElementById('pre-vis-lis-r-4').style.listStyle = tipo_ordem_r;
+
+    if(document.getElementById('txt-re3-p1').value != ''){
+      document.getElementById('pre-vis-lis-r-4').innerHTML = document.getElementById('txt-re3-p1').value;
+    }
+
+    else{
+      document.getElementById('pre-vis-lis-r-4').innerHTML = 'Resposta 4';
+    }
+  }
+  
+  quiz_config.ordem_r = tipo_ordem_r;
 
 }
 

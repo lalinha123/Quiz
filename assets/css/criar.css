@@ -278,6 +278,7 @@ div#pre-vis-pont ul li{
 div#pre-vis-quiz{
   width: 250px;
   height: fit-content;
+  min-height: 270px;
   margin-top: 30px;
   padding: 10px 0;
   border-radius: 5px;
@@ -360,10 +361,6 @@ button.pre-vis-btn{
   border-radius: 50%;
   display: inline-block;
   left: 50%;
-}
-
-.grid{
-  display: grid;
 }
 
 div.div-cor-btn{
