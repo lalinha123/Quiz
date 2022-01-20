@@ -306,8 +306,8 @@ p#pre-vis-pergunta{
   color: var(--c-cor4);
   font-size: 15px;
   font-family: var(--f-pergunta);
-  height: 85px;
-  margin: 0 0 10px;
+  /*height: 85px;*/
+  margin: 20px 0;
   overflow: hidden;
 }
 
@@ -321,7 +321,7 @@ p#pre-vis-pergunta{
 #pre_vis_lis_r li{
   font-size: 13px;
   list-style: circle;
-  margin: 5px 0;
+  margin: 2.5px 0;
   padding: 7px;
 }
 

@@ -62,6 +62,7 @@ function criaInputTxt(tipo, num, valor, num_perg){
   div_txt.classList.add("div-input");
   input_txt.id = `txt-${tipo + num}-p${num_perg}`;
   input_txt.innerHTML = valor;
+  input_txt.maxLength = 40;
   label_txt.for = input_txt.id;
 
   if(tipo === 're'){
@@ -86,6 +87,7 @@ function criaInputTxt(tipo, num, valor, num_perg){
 
   else if(tipo === 'p'){
     div_anterior = document.getElementById(`div_perg_tit_p${num_perg}`);
+    input_txt.maxLength = 70;
     label_txt.innerHTML = `Pergunta`;
     label_txt.classList.add('obrigatorio');
   }
@@ -379,8 +381,6 @@ function abreCor(div_nome){
   else if(document.getElementById(div_nome).style.display === 'grid'){
     addDisplayNone(div_nome);
   }
-  
-  
 }
 
 // --------- FUNÇÕES/OBJETOS DE PÁGINA----------------------------------------------------------
@@ -445,6 +445,7 @@ function pagSecAparencia(){
 function proxPag(){
   window.scrollTo(0, 0);
   pegaInformacao();
+  document.getElementById('pre_vis_pag').innerHTML = `Pergunta 1 de  ${lista_perg.length}`;
 
   if(pagina_atual === `pag_config_quiz`){
     pagPergunta();
