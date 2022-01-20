@@ -231,7 +231,6 @@ div#pre-vis-temp{
   position: absolute;
 }
 
-
 div#pre-vis-temp p{
   color: var(--c-cor4);
   margin: 0;
@@ -239,7 +238,7 @@ div#pre-vis-temp p{
 }
 
 div#pre-vis-pont{
-  width: fit-content;
+  width: 95px;
   margin: 70px 20px 20px;
   padding: 5px 20px;
   border: 1px solid var(--c-cor4);
@@ -267,15 +266,12 @@ div#pre-vis-pont ul li{
 
 div#pre-vis-quiz{
   width: 250px;
-  height: 310px;
+  height: fit-content;
   margin-top: 30px;
+  padding: 10px 0;
   border-radius: 5px;
   display: inline-block;
   box-shadow:0 0 5px rgba(0, 0, 0, 0.233);
-}
-
-div#pre-vis-header{
-  padding: 20px;
 }
 
 p#pre-vis-tema{
@@ -287,11 +283,46 @@ p#pre-vis-tema{
   border-bottom: 2px solid var(--c-cor3);
 }
 
+div#pre-vis-header{
+  padding: 0 20px;
+}
+
+div#pre_vis_div_top{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+}
+
+div#pre_vis_div_top p{
+  font-family: var(--f-resposta);
+  font-size: 12px;
+}
+
+p#pre_vis_pontos{
+  font-weight: bold;
+}
+
 p#pre-vis-pergunta{
   color: var(--c-cor4);
-  font-size: 16px;
+  font-size: 15px;
   font-family: var(--f-pergunta);
+  height: 85px;
+  margin: 0 0 10px;
   overflow: hidden;
+}
+
+#pre_vis_lis_r{
+  margin: 0;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  padding: 0;
+}
+
+#pre_vis_lis_r li{
+  font-size: 13px;
+  list-style: circle;
+  margin: 5px 0;
+  padding: 7px;
 }
 
 div#div-div-muda-aparencia{
@@ -340,8 +371,12 @@ button.btn-cor-btn{
   width: 30px;
   height: 30px;
   padding: 0;
-  border: 2px solid var(--c-cinza-escuro);
+  outline: 1px solid var(--c-cinza-escuro);
   border-radius: 50%;
+}
+
+button.btn-cor-btn:hover{
+  outline-width: 2px;
 }
 
 div#div-div-fonte{
