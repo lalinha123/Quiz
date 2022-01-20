@@ -1,4 +1,5 @@
 @import 'principal.css';
+@import 'resp_criar.css';
 
 #nav-link-criar{
   border-bottom: 2px solid white;
@@ -489,6 +490,7 @@ div#div-btn-pag button:hover{
 div#div-btn-pag button.btn-pag-left{
   float: left;
 }
+
 
 
 

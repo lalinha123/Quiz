@@ -1,0 +1,30 @@
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  #cont-princ{
+    width: 500px;
+    padding: 40px;
+  }
+
+  #titulo-princ{
+    margin: 3vh auto 5vh !important;
+  }
+  
+  #titulo-princ h1{
+    font-size: 30px !important;
+  }
+  
+}
+
+@media screen and (max-width: 599px) {
+  #cont-princ{
+    width: 100%;
+    padding: 30px !important;
+  }
+
+  #titulo-princ{
+    margin: 3vh auto 5vh !important;
+  }
+  
+  #titulo-princ h1{
+    font-size: 28px !important;
+  }
+}
