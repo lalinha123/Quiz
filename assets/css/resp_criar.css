@@ -5,7 +5,7 @@
   }
 
   #titulo-princ{
-    margin: 3vh auto 5vh !important;
+    margin: 3vh 0 5vh !important;
   }
   
   #titulo-princ h1{
@@ -16,12 +16,12 @@
 
 @media screen and (max-width: 599px) {
   #cont-princ{
-    width: 100%;
+    width: 90%;
     padding: 30px !important;
   }
 
   #titulo-princ{
-    margin: 3vh auto 5vh !important;
+    margin: 3vh 0 5vh !important;
   }
   
   #titulo-princ h1{

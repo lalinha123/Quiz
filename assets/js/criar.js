@@ -5,6 +5,8 @@ const root = document.querySelector(':root')
 const root_s = getComputedStyle(root);
 const p_perg_apar = document.getElementById('pre-vis-pergunta');
 const p_resp_apar = document.querySelector("ul#pre_vis_lis_r");
+let cbx_placar;
+let cbx_pontos;
 let lista_perg = [];
 let lista_fonte_p = [];
 let lista_fonte_r = [];
@@ -363,6 +365,8 @@ function pegaInformacao(){
   tema = document.getElementById('txt-tema').value;
   tempo_min = document.getElementById('txt-tempo-min').value;
   tempo_seg = document.getElementById('txt-tempo-seg').value;
+  cbx_pontuacao = document.getElementById('cbx-pont-most-pontuacao').checked;
+  cbx_pontos = document.getElementById('cbx-pont-most-pont').checked;
 
   document.getElementById('p-pre-vis-temp').innerHTML = `${tempo_min} : ${tempo_seg}`
   document.getElementById('pre-vis-tema').innerHTML = tema;
@@ -374,6 +378,30 @@ function pegaInformacao(){
   else if(document.getElementById('txt-p-p1').value != ''){
     p_perg_apar.innerHTML = document.getElementById('txt-p-p1').value;
   }
+
+ switch (cbx_pontuacao) {
+   case true:
+     document.getElementById('pre-vis-pont').style.display = 'unset';
+     pont_body.pontuacao = true;
+     break;
+ 
+    case false:
+      document.getElementById('pre-vis-pont').style.display = 'none';
+      pont_body.pontuacao = false;
+      break;
+ }
+
+ switch (cbx_pontos) {
+  case true:
+    document.getElementById('pre_vis_pontos').style.display = 'unset';
+    pont_body.pontos = true;
+    break;
+
+   case false:
+     document.getElementById('pre_vis_pontos').style.display = 'none';
+     pont_body.pontos = false;
+     break;
+}
 
 }
 
