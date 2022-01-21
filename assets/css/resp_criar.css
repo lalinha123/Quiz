@@ -1,4 +1,8 @@
 @media screen and (min-width: 600px) and (max-width: 899px) {
+  body{
+    font-size: 16px;
+  }
+
   #cont-princ{
     width: 500px;
     padding: 40px;
@@ -12,20 +16,58 @@
   #titulo-princ h1{
     font-size: 30px !important;
   }
+
+  .div-input label{
+    font-size: 19px !important;
+  }
 }
 
 @media screen and (max-width: 599px) {
+  body{
+    font-size: 15px;
+  }
+
   #cont-princ{
-    width: 100vw;
-    padding: 30px !important;
-    margin-top: 80px;
+    width: 95%;
+    padding: 20px !important;
+    padding-right: 20px !important; 
+    margin-top: 100px;
+  }
+
+  #cont-quiz{
+   border-radius: 0 !important;
   }
 
   #titulo-princ{
-    margin: 3vh 0 5vh !important;
+    width: 90%;
+    margin: 1vh auto 5vh !important;
+    position: relative;
   }
   
   #titulo-princ h1{
     font-size: 28px !important;
+  }
+
+  .div-input{
+    width: 100%;
+    margin: auto;
+  }
+
+  .div-input label{
+    font-size: 18px !important;
+  }
+
+  input[type='text']{
+  padding: 4px 15px !important;
+}
+
+  button.btn-add-r, button#btn-add-p{
+    font-size: 16px !important;
+    width: 80% !important;
+    margin: 2vh auto !important;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
   }
 }
