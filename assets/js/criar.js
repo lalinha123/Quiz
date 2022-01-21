@@ -1,16 +1,22 @@
 // --------- VARIÁVEIS----------------------------------------------------------
-let pagina_atual;
 const form = document.getElementById('form-quiz');
 const root = document.querySelector(':root')
 const root_s = getComputedStyle(root);
 const p_perg_apar = document.getElementById('pre-vis-pergunta');
 const p_resp_apar = document.querySelector("ul#pre_vis_lis_r");
+let pagina_atual;
 let cbx_placar;
 let cbx_pontos;
 let tipo_ordem_r;
+let nome;
+let tema;
+let tempo_min;
+let tempo_seg;
+
 let lista_perg = [];
 let lista_fonte_p = [];
 let lista_fonte_r = [];
+
 let quiz_config = {
   div_pontuacao: false,
   p_pontos: false,
@@ -18,6 +24,7 @@ let quiz_config = {
   seq_p: '',
   seq_r: '',
 };
+
 let fonte_p = {
   fonte: 'Open Sans',
   fonte_tipo: 'sans-serif',
@@ -35,11 +42,6 @@ let fonte_r = {
   underline: false,
   italic: false,
 };
-
-let nome;
-let tema;
-let tempo_min;
-let tempo_seg;
 
 // --------- FUNÇÕES/OBJETOS DA PÁGINA DE PERGUNTAS----------------------------------------------------------
 
@@ -115,12 +117,14 @@ function addResposta(btn_id){
   if(resposta_2){
     if(!resposta_3){
       criaInputTxt('re', 3, '', num_perg);
+      document.getElementById('pre-vis-lis-r-4').style.display = 'list-item'
     }
     document.getElementById(btn_id).style.display = 'none';
   }
 
   else if (!resposta_2){
     criaInputTxt('re', 2, '', num_perg);
+    document.getElementById('pre-vis-lis-r-3').style.display = 'list-item'
   }
 }
 
@@ -208,8 +212,6 @@ function calcTempo(btn_id, btn_classe){
         addZero();
       }
     }
-
-    
   }
 }
 
@@ -337,7 +339,6 @@ function textoEstilo(estilo, fon_tipo_ul){
       mudaEstilo(fonte_r, p_resp_apar);
       break;
   }
-
 }
 
 function mudaCor(cor, cor_nova){
@@ -363,7 +364,6 @@ function abreCor(div_nome){
 }
 
 // --------- FUNÇÕES/OBJETOS DE PÁGINA----------------------------------------------------------
-
 function pegaInformacao(){
   nome = document.getElementById('txt-nome').value;
   tema = document.getElementById('txt-tema').value;
@@ -429,33 +429,9 @@ function pegaInformacao(){
 
   document.getElementById('pre-vis-lis-r-1').style.listStyle = tipo_ordem_r;
   document.getElementById('pre-vis-lis-r-2').style.listStyle = tipo_ordem_r;
-
-  if(document.getElementById('pre-vis-lis-r-3')){
-    document.getElementById('pre-vis-lis-r-3').style.listStyle = tipo_ordem_r;
-
-    if(document.getElementById('txt-re2-p1').value != ''){
-      document.getElementById('pre-vis-lis-r-3').innerHTML = document.getElementById('txt-re2-p1').value;
-    }
-
-    else{
-      document.getElementById('pre-vis-lis-r-3').innerHTML = 'Resposta 3';
-    }
-  }
-
-  if(document.getElementById('pre-vis-lis-r-4')){
-    document.getElementById('pre-vis-lis-r-4').style.listStyle = tipo_ordem_r;
-
-    if(document.getElementById('txt-re3-p1').value != ''){
-      document.getElementById('pre-vis-lis-r-4').innerHTML = document.getElementById('txt-re3-p1').value;
-    }
-
-    else{
-      document.getElementById('pre-vis-lis-r-4').innerHTML = 'Resposta 4';
-    }
-  }
-  
+  document.getElementById('pre-vis-lis-r-3').style.listStyle = tipo_ordem_r;
+  document.getElementById('pre-vis-lis-r-4').style.listStyle = tipo_ordem_r;
   quiz_config.ordem_r = tipo_ordem_r;
-
 }
 
 function pagPergunta(){
@@ -501,29 +477,34 @@ function proxPag(){
   pegaInformacao();
   document.getElementById('pre_vis_pag').innerHTML = `Pergunta 1 de  ${lista_perg.length}`;
 
-  if(pagina_atual === `pag_config_quiz`){
-    pagPergunta();
-  }
-
-  else if(pagina_atual === `pag_perguntas`){
-    pagSecAparencia();
+  switch (pagina_atual) {
+    case `pag_perguntas`:
+      pagSecAparencia();
+      break;
+  
+    case `pag_config_quiz`:
+      pagPergunta();
+      break;
   }
 }
 
 function pagAnt(){
   window.scrollTo(0, 0);
-  
-  if(pagina_atual === `pag_perguntas`){
-    pagConfigQuiz();
-  }
 
-  if(pagina_atual === `pag_aparencia`){
-    pagPergunta();
+  switch (pagina_atual) {
+    case `pag_perguntas`:
+      pagConfigQuiz();
+      break;
+  
+    case `pag_aparencia`:
+      pagPergunta();
+      break;
   }
 }
 
 window.addEventListener('load', function() {
   pagConfigQuiz();
+  navbar();
 });
 
 
@@ -535,7 +516,6 @@ document.getElementById('btn-cria-quiz').addEventListener('click', function(){
   }
 });
 
-navbar();
 
 
 

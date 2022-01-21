@@ -91,7 +91,6 @@
 
 input[type='text']{
   padding: 7px 20px;
-  border-radius: 8px;
   border: 1px solid var(--c-cinza-medio);
 }
 
@@ -336,6 +335,11 @@ p#pre-vis-pergunta{
   list-style: circle;
   margin: 2.5px 0;
   padding: 7px 10px;
+}
+
+#pre_vis_lis_r li#pre-vis-lis-r-3,
+#pre_vis_lis_r li#pre-vis-lis-r-4{
+  display: none;
 }
 
 div#div-div-muda-aparencia{
