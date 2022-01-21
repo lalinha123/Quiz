@@ -20,11 +20,28 @@
   .div-input label{
     font-size: 19px !important;
   }
+
+  .div-input #div-div-tempo{
+    grid-template-columns: 120px 20px 120px !important;
+  }
+
+  div.div-btn-tempo{
+    width: 30px !important;
+    margin: -6.5px 1px !important;
+    display: grid !important;
+    grid-template-rows: repeat(2, 25px) !important;
+  }
+  
+  div.div-btn-tempo button{
+    font-size: 12px !important;
+    height: 25px;
+    padding: 2px 10px !important;
+  }
 }
 
 @media screen and (max-width: 599px) {
   body{
-    font-size: 15px;
+    font-size: 14px;
   }
 
   #cont-princ{
@@ -39,13 +56,12 @@
   }
 
   #titulo-princ{
-    width: 90%;
     margin: 1vh auto 5vh !important;
     position: relative;
   }
   
   #titulo-princ h1{
-    font-size: 28px !important;
+    font-size: 27px !important;
   }
 
   .div-input{
@@ -58,11 +74,33 @@
   }
 
   input[type='text']{
-  padding: 4px 15px !important;
-}
+    padding: 4px 15px !important;
+  }
+
+  .div-input #div-div-tempo{
+    grid-template-columns: 110px 20px 110px !important;
+  }
+
+  .div-input #div-div-tempo span{
+    margin: 20px 0 !important;
+    font-size: 25px !important;
+  }
+
+  div.div-btn-tempo{
+    width: 30px !important;
+    margin: -6.5px 1px !important;
+    display: grid !important;
+    grid-template-rows: repeat(2, 25px) !important;
+  }
+  
+  div.div-btn-tempo button{
+    font-size: 12px !important;
+    height: 25px;
+    padding: 2px 10px !important;
+  }
 
   button.btn-add-r, button#btn-add-p{
-    font-size: 16px !important;
+    font-size: 4vw !important;
     width: 80% !important;
     margin: 2vh auto !important;
     left: 50%;
