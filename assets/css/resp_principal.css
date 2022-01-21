@@ -1,0 +1,21 @@
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  #navbar a, #navbar a:visited{
+    font-size: 21px !important;
+  }
+  
+  #navbar #nav-link-quiz{
+    font-size: 28px !important;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #navbar a, #navbar a:visited{
+    font-size: 21px !important;
+    margin: 0 5px !important;
+  }
+  
+  #navbar #nav-link-quiz{
+    font-size: 27px !important;
+    margin: 0 10px !important;
+  }
+}

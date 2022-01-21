@@ -2,6 +2,7 @@
   #cont-princ{
     width: 500px;
     padding: 40px;
+    margin-top: 80px;
   }
 
   #titulo-princ{
@@ -11,13 +12,13 @@
   #titulo-princ h1{
     font-size: 30px !important;
   }
-  
 }
 
 @media screen and (max-width: 599px) {
   #cont-princ{
-    width: 90%;
+    width: 100vw;
     padding: 30px !important;
+    margin-top: 80px;
   }
 
   #titulo-princ{

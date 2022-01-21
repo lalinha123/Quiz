@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Heebo&family=Open+Sans:wght@400&family=Roboto&family=Montserrat&family=Playfair+Display&family=Roboto+Mono&family=The+Nautigal&family=Oswald&family=Dancing+Script&display=swap');
-@import '/responsividade/resp_principal.css';
+@import 'resp_principal.css';
 
 :root{
   --c-cinza-claro: #e9e9e9;
@@ -109,7 +109,7 @@ button i{
 #navbar ul li{
   opacity: 100%;
   list-style: none;
-  display: inline-block;
+  display: inline;
 }
 
 #navbar a, #navbar a:visited{
