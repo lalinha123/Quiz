@@ -274,6 +274,15 @@ input[type='radio'], input[type='checkbox']{
   list-style: none;
  }
 
+#pre-vis-tema{
+  color: var(--c-cor2);
+  font-size: 15px;
+  font-family: var(--f-resposta);
+  width: fit-content;
+  margin: 10px 0 20px;
+  border-bottom: 2px solid var(--c-cor3);
+}
+
 #pre-vis-quiz{
   width: 250px;
   height: fit-content;
@@ -283,15 +292,6 @@ input[type='radio'], input[type='checkbox']{
   border-radius: 5px;
   display: inline-block;
   box-shadow:0 0 5px rgba(0, 0, 0, 0.233);
-}
-
-#pre-vis-tema{
-  color: var(--c-cor2);
-  font-size: 15px;
-  font-family: var(--f-resposta);
-  width: fit-content;
-  margin: 10px 0 20px;
-  border-bottom: 2px solid var(--c-cor3);
 }
 
 #pre-vis-header{
