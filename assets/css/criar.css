@@ -237,6 +237,10 @@ input[type='radio'], input[type='checkbox']{
   position: absolute;
 }
 
+#div-div-pre-vis{
+  margin: 0 90px;
+}
+
 #pre-vis-temp p{
   color: var(--c-cor4);
   margin: 0;
@@ -260,7 +264,7 @@ input[type='radio'], input[type='checkbox']{
   font-size: 14px;
   font-family: var(--f-pergunta);
   padding: 0 3px;
- }
+}
 
 #pre-vis-pont ul{
  padding: 0;
@@ -399,7 +403,7 @@ input[type='radio'], input[type='checkbox']{
 }
 
 .lis-apar-titulo{
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   margin: 0;
   margin-top: 20px;

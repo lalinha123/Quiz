@@ -46,8 +46,38 @@
   #pre-vis-aparencia{
     height: 300px !important;
     max-height: 300px !important;
-    padding: 10px !important;
+    padding: 10px 25px !important;
   }
+
+  #div-div-pre-vis{
+    margin: 0 80px !important;
+  }
+
+  #pre-vis-temp{
+    margin: 10px !important;
+    padding: 2px 10px !important;
+    border-radius: 10px !important;
+  }
+
+  #pre-vis-temp p{
+   font-size: 14px;
+  }
+
+  #pre-vis-pont{
+    width: 65px !important;
+    margin: 40px 10px 10px !important;
+    padding: 2px 15px !important;
+  }
+  
+  #pre-vis-pont p{
+    font-size: 11px !important;
+    padding: 0 3px !important;
+   }
+  
+  #pre-vis-pont li{
+    font-size: 9px !important;
+    margin: 2px 0 !important;
+   }
 
   #pre-vis-tema{
     font-size: 12px !important;
@@ -56,8 +86,8 @@
 
   #pre-vis-quiz{
     width: 180px !important;
-    min-height: 210px !important;
-    margin-top: 6px !important;
+    min-height: 200px !important;
+    margin-top: 15px !important;
     padding: 8px 0 !important;
   }
 
@@ -98,6 +128,28 @@
     grid-template-columns: 100% !important;
     grid-template-rows: 220px 5vh 5vh !important;
   }
+
+  .pre-vis-btn{
+    width: 40px !important;
+    height: 43px !important;
+  }
+
+  .div-cor-btn{
+    margin: -20px auto 0 !important;
+    padding: 8px !important;
+    grid-template-columns: repeat(3, 37px) !important;
+  }
+  
+  .btn-cor-btn{
+    width: 25px !important;
+    height: 25px !important;
+    margin: 5px auto !important;
+    padding: 0 !important;
+  }
+
+  #div-div-muda-aparencia p {
+    margin: 5px!important;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -116,7 +168,7 @@
   }
   
   #titulo-princ h1{
-    font-size: 27px !important;
+    font-size: 25px !important;
   }
 
   .div-input{
@@ -135,6 +187,7 @@
   }
 
   input[type='text']{
+    width: 80vw !important;
     padding: 4px 15px !important;
     margin: 3px 7px !important;
   }
@@ -172,8 +225,123 @@
     padding: 5px !important;
   }
 
+  .div-pergunta .div-pergunta-titulo{
+    font-size: 17px !important;
+    margin: -20px 0 2vh 10px !important;
+    padding: 2px 10px !important;
+  }
+
+  #pre-vis-aparencia{
+    margin: 0 2vw !important;
+    height: 55vw !important;
+    max-height: 58vw !important;
+    padding: 2vw 5vw !important;
+  }
+
+  #div-div-pre-vis{
+    margin: 0 18vw !important;
+  }
+
+  #pre-vis-temp{
+    margin: 2vw !important;
+    padding: 1vw 2vw !important;
+    border-radius: 3vw !important;
+  }
+
+  #pre-vis-temp p{
+   font-size: 2.3vw;
+  }
+
+  #pre-vis-pont{
+    width: 12vw !important;
+    height: 16vw !important;
+    margin: 9vw 2vw 2vw !important;
+    padding: 1vw 2vw !important;
+  }
+  
+  #pre-vis-pont p{
+    font-size: 2vw !important;
+    margin: 0.5vw auto !important;
+   }
+
+  #pre-vis-pont ul{
+    margin: 0 !important;
+    padding: 0.5vw 0 !important;
+  }
+  
+  #pre-vis-pont li{
+    font-size: 1.6vw !important;
+    margin: 1vw 0 !important;
+  }
+
+  #pre-vis-tema{
+    font-size: 2vw !important;
+    margin: 1vw 0 1.5vw !important;
+  }
+
+  #pre-vis-quiz{
+    width: 31vw !important;
+    height: 38vw !important;
+    min-height: 38vw !important;
+    margin-top: 3.5vw !important;
+    padding: 1vw 0 !important;
+  }
+
+  #pre-vis-header{
+    padding: 0 1.5vw !important;
+  }
+  
+  #pre_vis_div_top p{
+    font-size: 1.4vw !important;
+  }
+
+  #pre-vis-pergunta{
+    font-size: 2vw !important;
+    margin: 2.8vw 0 !important;
+  }
+
+  #pre_vis_lis_r{
+    margin-bottom: 2vw !important;
+    margin-left: 3vw !important;
+  }
+  
+  #pre_vis_lis_r li{
+    font-size: 1.6vw !important;
+    margin: 0 !important;
+    padding: 1vw 2vw !important;
+  }
+
+  .div-cor-aparencia {
+    padding-right: 40px;
+  }
+
+  .pre-vis-btn{
+    width: 25px !important;
+    height: 45px !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .div-cor-btn{
+    margin: 0 auto 0 -5vw !important;
+    padding: 2vw !important;
+    grid-template-columns: repeat(3, 8vw) !important;
+  }
+  
+  .btn-cor-btn{
+    width: 5vw !important;
+    height: 5vw !important;
+    margin: 1vw auto !important;
+    padding: 0 !important;
+  }
+
+  #div-div-muda-aparencia p {
+    margin: 1.5vw !important;
+  }
+
   .lis-apar-titulo{
-    font-size: 16px !important;
+    font-size: 14px !important;
+    margin-top: 0.5vh;
   }
 
   #div-input-apar-p{
@@ -203,6 +371,10 @@
   .div-lis-fon-estilo i{
     font-size: 16px !important;
     margin: 0 4vw !important;
+  }
+
+  .div-lis-fon-estilo {
+    margin: 15px auto 1vh !important;
   }
 
   .btn-add-r, #btn-add-p{
