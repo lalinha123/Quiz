@@ -54,6 +54,20 @@
     margin-top: 10px;
     padding: 6px 0;
   }
+
+  #div-input-apar-p{
+    height: 470px;
+  }
+
+  #div-input-apar-r{
+    height: 370px;
+  }
+
+  #div-div-apar{
+    height: inherit;
+    grid-template-columns: 100% !important;
+    grid-template-rows: 220px 5vh 5vh !important;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -62,7 +76,6 @@
   }
 
   #cont-quiz{
-    padding: 40px !important;
     border-radius: 0 !important;
   }
 
@@ -93,7 +106,7 @@
 
   input[type='text']{
     padding: 4px 15px !important;
-    margin: 3px 12px !important;
+    margin: 3px 7px !important;
   }
 
   .div-input .txt-tempo{
@@ -129,6 +142,39 @@
     padding: 5px !important;
   }
 
+  .lis-apar-titulo{
+    font-size: 16px !important;
+  }
+
+  #div-input-apar-p{
+    height: 470px;
+  }
+
+  #div-input-apar-r{
+    height: 370px;
+  }
+
+  #div-div-apar{
+    height: inherit;
+    grid-template-columns: 100% !important;
+    grid-template-rows: 220px 5vh 5vh !important;
+  }
+
+  #lis-fonte-p, #lis-fonte-r{
+    width: 200px !important;
+    padding: 10px !important;
+  }
+
+  #lis-fonte-p li, #lis-fonte-r li{
+    font-size: 16px !important;
+    padding: 6px 10px;
+  }
+
+  .div-lis-fon-estilo i{
+    font-size: 16px !important;
+    margin: 0 4vw !important;
+  }
+
   button.btn-add-r, button#btn-add-p{
     font-size: 3.5vw !important;
     width: 80% !important;
@@ -136,7 +182,7 @@
     left: 50%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    position: absolute;
+    position: relative;
   }
 
   div#div-btn-pag button{

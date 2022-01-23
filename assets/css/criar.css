@@ -140,19 +140,19 @@ input[type='radio'], input[type='checkbox']{
   grid-template-columns: repeat(2, 80px);
 }
 
-section.sec-tempo p{
+.sec-tempo p{
   font-weight: bold;
   margin: auto;
 }
 
-div.div-btn-tempo{
+.div-btn-tempo{
   width: 35px;
   margin: 12px 0 0;
   display: grid;
   grid-template-rows: repeat(2, 30px);
 }
 
-div.div-btn-tempo button{
+.div-btn-tempo button{
   font-size: 17px;
   width: fit-content;
   margin: 0;
@@ -209,7 +209,7 @@ div.div-btn-tempo button{
   background: var(--c-cor12);
 }
 
-div#pre-vis-aparencia{
+#pre-vis-aparencia{
   height: 430px;
   max-height: 430px;
   padding: 10px 40px;
@@ -224,7 +224,7 @@ div#pre-vis-aparencia{
    user-select: none;
 }
 
-div#pre-vis-temp{
+#pre-vis-temp{
   background-color: var(--c-cor3);
   font-family: var(--f-resposta);
   font-weight: bold;
@@ -237,13 +237,13 @@ div#pre-vis-temp{
   position: absolute;
 }
 
-div#pre-vis-temp p{
+#pre-vis-temp p{
   color: var(--c-cor4);
   margin: 0;
   padding: 0;
 }
 
-div#pre-vis-pont{
+#pre-vis-pont{
   text-align: center;
   width: 95px;
   margin: 70px 20px 20px;
@@ -255,26 +255,26 @@ div#pre-vis-pont{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.123);
 }
 
-div#pre-vis-pont p{
+#pre-vis-pont p{
   background-color: var(--c-cor3);
   font-size: 14px;
   font-family: var(--f-pergunta);
   padding: 0 3px;
  }
 
-div#pre-vis-pont ul{
+#pre-vis-pont ul{
  padding: 0;
  text-align: left;
 }
 
-div#pre-vis-pont ul li{
+#pre-vis-pont li{
   font-family: var(--f-resposta);
   font-size: 12px;
   margin: 3.5px 0;
   list-style: none;
  }
 
-div#pre-vis-quiz{
+#pre-vis-quiz{
   width: 250px;
   height: fit-content;
   min-height: 270px;
@@ -285,7 +285,7 @@ div#pre-vis-quiz{
   box-shadow:0 0 5px rgba(0, 0, 0, 0.233);
 }
 
-p#pre-vis-tema{
+#pre-vis-tema{
   color: var(--c-cor2);
   font-size: 15px;
   font-family: var(--f-resposta);
@@ -294,26 +294,26 @@ p#pre-vis-tema{
   border-bottom: 2px solid var(--c-cor3);
 }
 
-div#pre-vis-header{
+#pre-vis-header{
   padding: 0 20px;
 }
 
-div#pre_vis_div_top{
+#pre_vis_div_top{
   width: 100%;
   display: grid;
   grid-template-columns: 1.5fr 0.5fr;
 }
 
-div#pre_vis_div_top p{
+#pre_vis_div_top p{
   font-family: var(--f-resposta);
   font-size: 10px;
 }
 
-p#pre_vis_pontos{
+#pre_vis_pontos{
   font-weight: bold;
 }
 
-p#pre-vis-pergunta{
+#pre-vis-pergunta{
   color: var(--c-cor4);
   font-size: 15px;
   font-family: var(--f-pergunta);
@@ -337,27 +337,27 @@ p#pre-vis-pergunta{
   padding: 7px 10px;
 }
 
-#pre_vis_lis_r li#pre-vis-lis-r-3,
-#pre_vis_lis_r li#pre-vis-lis-r-4{
+#pre_vis_lis_r #pre-vis-lis-r-3,
+#pre_vis_lis_r #pre-vis-lis-r-4{
   display: none;
 }
 
-div#div-div-muda-aparencia{
+#div-div-muda-aparencia{
   width: 100%;
   padding: 10px 20px;
   display: block;
 }
 
-div.div-cor-aparencia{
+.div-cor-aparencia{
   display: inline-block;
   margin-right: 30px;
 }
 
-div#div-div-muda-aparencia p{
+#div-div-muda-aparencia p{
   margin: 5px 5px 5px 20px;
 }
 
-button.pre-vis-btn{
+.pre-vis-btn{
   width: 60px;
   height: 60px;
   padding: 0;
@@ -367,7 +367,7 @@ button.pre-vis-btn{
   left: 50%;
 }
 
-div.div-cor-btn{
+.div-cor-btn{
   background-color: var(--c-back-conteiner);
   margin: -10px 10px 0;
   padding: 10px;
@@ -380,7 +380,7 @@ div.div-cor-btn{
   z-index: 1000;
 }
 
-button.btn-cor-btn{
+.btn-cor-btn{
   width: 30px;
   height: 30px;
   padding: 0;
@@ -388,26 +388,26 @@ button.btn-cor-btn{
   border-radius: 50%;
 }
 
-button.btn-cor-btn:hover{
+.btn-cor-btn:hover{
   outline-width: 2px;
 }
 
-div#div-div-apar{
+#div-div-apar{
   padding: 0 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-p.lis-apar-titulo{
+.lis-apar-titulo{
   font-size: 20px;
   font-weight: bold;
   margin: 0;
   margin-top: 20px;
 }
 
-ul#lis-fonte-p, ul#lis-fonte-r{
+#lis-fonte-p, #lis-fonte-r{
   width: 250px;
-  max-height: 20vh;
+  height: 120px;
   overflow: auto;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -418,20 +418,20 @@ ul#lis-fonte-p, ul#lis-fonte-r{
   display: inline-block;
 }
 
-ul#lis-fonte-p li, ul#lis-fonte-r li{
+#lis-fonte-p li, #lis-fonte-r li{
   font-size: 19px;
   width: inherit;
   padding: 6px 10px;
   display: inline-block;
 }
 
-ul#lis-fonte-p li:hover, ul#lis-fonte-p li:active,
-ul#lis-fonte-r li:hover, ul#lis-fonte-r li:active{
+#lis-fonte-p li:hover, #lis-fonte-p li:active,
+#lis-fonte-r li:hover, #lis-fonte-r li:active{
   background-color: var(--c-cinza-claro);
   cursor: pointer;
 }
 
-div.div-lis-fon-estilo{
+.div-lis-fon-estilo{
   text-align: center;
   margin: 15px auto 4vh;
   padding: 5px 10px;
@@ -439,7 +439,7 @@ div.div-lis-fon-estilo{
   border-radius: 5px;
 }
 
-div.div-lis-fon-estilo i{
+.div-lis-fon-estilo i{
   font-size: 22px;
   margin: 0 20px;
   padding: 8px 10px;
@@ -447,16 +447,16 @@ div.div-lis-fon-estilo i{
   display: inline-block;
 }
 
-ul#lis-fonte-p:hover, ul#lis-fonte-r:hover, div.div-lis-fon-estilo:hover{
+#lis-fonte-p:hover, #lis-fonte-r:hover, .div-lis-fon-estilo:hover{
   border: 1px solid var(--c-cinza-escuro);
 }
 
-div.div-lis-fon-estilo i:hover, div.div-lis-fon-estilo i:active{
+.div-lis-fon-estilo i:hover, .div-lis-fon-estilo i:active{
   background-color: var(--c-cinza-claro);
   cursor: pointer;
 }
 
-button.btn-add-r, button#btn-add-p{
+.btn-add-r, #btn-add-p{
   background-color: var(--c-cinza-claro);
   font-size: 20px;
   width: 60%;
@@ -469,12 +469,12 @@ button.btn-add-r, button#btn-add-p{
   transform: translateX(-50%);
 }
 
-button.btn-add-r:hover, button#btn-add-p:hover{
+.btn-add-r:hover, #btn-add-p:hover{
   filter: brightness(94%);
   border-color: var(--c-cinza-escuro);
 }
 
-div#div-btn-pag button{
+#div-btn-pag button{
   margin: 7vh 0 0;
   background-color: var(--c-azul-medio);
   font-size: 25px;
@@ -482,13 +482,13 @@ div#div-btn-pag button{
   float: right;
 }
 
-div#div-btn-pag button:hover{
+#div-btn-pag button:hover{
   background-color: var(--c-amarelo);
   color: var(--c-cinza-escuro);
   transform: scale(102%);
 }
 
-div#div-btn-pag button.btn-pag-left{
+#div-btn-pag .btn-pag-left{
   float: left;
 }
 
